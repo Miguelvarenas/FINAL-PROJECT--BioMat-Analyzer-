@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VentanaPrincipal</class>
+ <widget class="QMainWindow" name="VentanaPrincipal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1129</width>
+    <height>857</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Panel de Control Diagnóstico Multimodal</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_imagenes">
+       <attribute name="title">
+        <string>Imágenes Médicas (3D)</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_img">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_controles_img">
+            <item>
+             <widget class="QLabel" name="lbl_ctrl_tit">
+              <property name="text">
+               <string>Navegación de Cortes:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider_axial">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider_sagital">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider_coronal">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lbl_bin_tit">
+              <property name="text">
+               <string>Binarización OpenCV:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="combo_binarizacion">
+              <item>
+               <property name="text">
+                <string>Binario</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Binario Invertido</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Truncado</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Tozero</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Tozero Invertido</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lbl_morf_tit">
+              <property name="text">
+               <string>Morfología Matemática:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="combo_morfologia">
+              <item>
+               <property name="text">
+                <string>Apertura</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Cierre</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Erosión</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Gradiente</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lbl_kernel_tit">
+              <property name="text">
+               <string>Tamaño del Kernel:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="spin_kernel">
+              <property name="minimum">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <number>15</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_exportar_nifti">
+              <property name="text">
+               <string>Exportar a NIfTI (.nii)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_guardar_zoom">
+              <property name="text">
+               <string>Guardar Zoom como:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="tabla_dicom"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_axial">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Área de Visualización de Volúmenes (Matplotlib)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_senales">
+       <attribute name="title">
+        <string>Señales Analógicas</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_sen">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_ctrl_sen">
+            <item>
+             <widget class="QLabel" name="lbl_canal_tit">
+              <property name="text">
+               <string>Control de Ruido:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider_ruido">
+              <property name="minimum">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_graficos_senales">
+            <property name="text">
+             <string>Gráficos de Ondas Clínicas</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_tabular">
+       <attribute name="title">
+        <string>Datos Tabulares</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QTableWidget" name="tabla_resumen">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>15</horstretch>
+              <verstretch>10</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="cornerButtonEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QComboBox" name="combo_scatter_y"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_y">
+          <property name="text">
+           <string>Variable Y:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="combo_scatter_x"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_x">
+          <property name="text">
+           <string>Variable X:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_grafico_tabular">
+          <property name="text">
+           <string>Espacio del Gráfico de Dispersión</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_seguridad">
+       <attribute name="title">
+        <string>Seguridad y Acceso</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_seg">
+          <item>
+           <widget class="QLabel" name="lbl_nombre_usuario">
+            <property name="styleSheet">
+             <string notr="true">font: 14pt &quot;MS UI Gothic&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Profesional: </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_fecha_foto">
+            <property name="styleSheet">
+             <string notr="true">font: 14pt &quot;MS UI Gothic&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Autenticado el: </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_camara">
+            <property name="text">
+             <string>Capturar Fotografía de Validación Biométrica</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

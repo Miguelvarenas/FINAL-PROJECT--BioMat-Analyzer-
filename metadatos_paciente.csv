@@ -1,0 +1,15 @@
+﻿Propiedad Médica,Valor
+PatientID,C3N-00247
+PatientName,C3N-00247
+StudyDate,20100227
+StudyTime,161937.171
+StudyModality,CT
+StudyDescription,CT CHEST W IV CONTRAST
+SeriesTime,162536.14
+DuracionEstudio,0:05:59
+Manufacturer,SIEMENS
+RescaleSlope,1
+RescaleIntercept,-1024
+PixelSpacing_mm,0.564453125 x 0.564453125
+SliceThickness_mm,3.0
+Dimensions,99 x 512 x 512
