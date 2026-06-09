@@ -135,7 +135,7 @@ class Controlador:
         print(f"[RUTA MAT] {ruta_archivo_mat_real}")
         self.senales.cargar_archivo_mat_real(ruta_archivo_mat_real)
 
-        ruta_archivo_csv_real = os.path.join(self.base_dir, "test_features.csv")
+        ruta_archivo_csv_real = os.path.join(self.base_dir, "val_features.csv")
         print(f"[RUTA CSV] {ruta_archivo_csv_real}")
         df_tab = self.tab.cargar_datos_clinicos_simulados(ruta_archivo_csv_real)
 
